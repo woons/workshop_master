@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <title>S.Korea Map</title>
+
+    <style type="text/css">
+        h1 {
+            color: #3F52B6;
+            font-family: helvetica;
+        }
+        
+        p {
+            color: #AAAAAA;
+            font-family: helvetica;
+            padding-right: 150px;
+        }
+        
+        body {
+            background-color: #F0F0F0;
+            font-family: Helvetica, sans-serif;
+            font-size: 14px;
+        }
+        
+        #container {
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            padding: 30px;
+            background-color: whitesmoke;
+            box-shadow: 6px 6px 6px 12px #ccc;
+        }
+        
+        path {
+            stroke-width: 0.3;
+            stroke: #F0F0F0;
+            fill: #3F52B6;
+        }
+        
+        path:hover {
+            fill: #321993;
+            cursor: pointer
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>REPUBLIC OF KOREA</h1>
+        <br>
+        <p>Korea, called Hanguk (Korean: 한국; Hanja: 韓國) or Daehan (Korean: 대한; Hanja: 大韓) in South Korea and Chosŏn (Korean: 조선; Hanja: 朝鮮) in North Korea, is an East Asian territory that is divided into two distinct sovereign states, North Korea (also known as the Democratic People's Republic of Korea, or DPRK) and South Korea (also known as the Republic of Korea, or ROK). Located on the Korean Peninsula, Korea is bordered by China to the northwest and Russia to the northeast. It is separated from Japan to the east by the Korea Strait and the Sea of Japan (East Sea).</p>
+    </div>
+    <script>
+        var w = 700;
+        var h = 600;
+
+        var projection = d3.geo.mercator()
+            .center([127, 35])
+            .translate([w / 2.5, h / 1.3])
+            .scale([w / 0.12]);
+
+        var path = d3.geo.path()
+            .projection(projection);
+
+        var svg = d3.select("#container")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
+
+        d3.json("korea.json", function (json) {
+            svg.selectAll("path")
+                .data(json.geometries)
+                .enter()
+                .append("path")
+                .attr("d", path)
+                .attr("class", "state");
+        });
+    </script>
+    <p>source : wikipedia</p>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Stacked area chart</title>
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <style type="text/css">
+        body {
+            background-color: #F0F0F0;
+            font-family: Helvetica, sans-serif;
+        }
+        #container {
+				width: 700px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 40px;
+				padding: 40px;
+				background-color: white;
+				box-shadow: 6px 6px 6px 12px #ccc;
+			}
+        #tooltip{
+				position:absolute;
+				width:150px;
+				height:auto;
+				padding:10px;
+				background-color:#000;
+				color:#fff;
+				font-size:16px;
+				font-weight: lighter;
+			}
+			#tooltip.hidden{ display: none; }
+        
+        
+        .content {
+            width: 300px;
+            margin: 0 auto;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #4A44BA;
+        }
+        
+        p {
+            font-size: 14px;
+            color: #CCCCCC;
+        }
+        
+        path:hover {
+            opacity: 1;
+        }
+        
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #888888;
+            shape-rendering: crispEdges;
+        }
+        
+        .axis text {
+            font-family: sans-serif;
+            font-size: 11px;
+            fill: #888888;
+        }
+    </style>
+</head>
+
+<body>
+   <div id="container">
+    <div class="content">
+        <h1>Statistics on Foreign Residents by Local Governments</h1>
+        <p>The report aims to provide basic reference material to help establish, implement and improve policies on foreign residents in Korea. 
+</p>
+        <p>Source : Korea MINISTRY OF THE INTERIOR</p>
+        <p><a href="http://www.facebook.com/delete210">By Yeowoon</a></p>
+        
+
+        
+    </div>
+    
+    <script type="text/javascript">
+        var stack = d3.layout.stack()
+            .values(function (d) {
+                return d.population;
+            })
+            .order("reverse");
+
+
+
+
+        var w = 700;
+        var h = 500;
+        var padding = [20, 10, 50, 100];
+
+        var dateFormat = d3.time.format("%Y");
+
+        var xScale = d3.time.scale()
+            .range([padding[3], w - padding[1] - padding[3]]);
+
+        var yScale = d3.scale.linear()
+            .range([padding[0], h - padding[2]]);
+
+
+
+        var xAxis = d3.svg.axis()
+            .scale(xScale)
+            .orient("bottom")
+            .ticks(10)
+            .tickFormat(function (d) {
+                return dateFormat(d);
+            });
+
+        var yAxis = d3.svg.axis()
+            .scale(yScale)
+            .orient("left")
+            .ticks(5);
+
+
+        var area = d3.svg.area()
+            .x(function (d) {
+                return xScale(dateFormat.parse(d.x));
+            })
+            .y0(function (d) {
+                return yScale(d.y0);
+            })
+            .y1(function (d) {
+                return yScale(d.y0 + d.y);
+            });
+
+        var color = d3.scale.category10();
+
+
+
+
+        var svg = d3.select("#container")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
+
+        var color = d3.scale.ordinal()
+            .range(["#4B48B7", "#E1AF00 ", "#EBCC2A ", "#78B7C5 ", "#3B9AB2 "]);
+
+
+
+
+        d3.csv("data.csv", function (data) {
+
+            var years = ["2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"];
+
+            
+            var dataset = [];
+
+            for (var i = 0; i < data.length; i++) {
+
+
+                dataset[i] = {
+                    section: data[i].section,
+                    population: []
+                };
+
+                for (var j = 0; j < years.length; j++) {
+
+
+                    var population = null;
+
+                    if (data[i][years[j]]) {
+                        population = +data[i][years[j]];
+                    }
+
+
+                    dataset[i].population.push({
+                        x: years[j],
+                        y: population
+                    });
+
+                }
+
+            }
+
+            stack(dataset);
+
+
+            xScale.domain([
+					d3.min(years, function (d) {
+                    return dateFormat.parse(d);
+                }),
+					d3.max(years, function (d) {
+                    return dateFormat.parse(d);
+                })
+				]);
+
+
+            var totals = [];
+
+            for (i = 0; i < years.length; i++) {
+                totals[i] = 0;
+                for (j = 0; j < dataset.length; j++) {
+                    totals[i] += dataset[j].population[i].y;
+                }
+            }
+
+            yScale.domain([d3.max(totals), 0]);
+
+            var paths = svg.selectAll("path")
+                .data(dataset)
+                .enter()
+                .append("path")
+                .attr("class", "area")
+                .attr("d", function (d) {
+                    return area(d.population);
+                })
+                .attr("stroke", "none")
+                .attr("fill", function (d, i) {
+                    return color(i);
+                })
+                .attr("opacity", 0.8)
+            
+
+            paths.append("title")
+                .text(function (d) {
+                    return d.section;
+                });
+            
+          
+								
+							
+				
+
+            svg.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + (h - padding[2]) + ")")
+                .call(xAxis);
+
+            svg.append("g")
+                .attr("class", "y axis")
+                .attr("transform", "translate(" + padding[3] + ",0)")
+                .call(yAxis);
+                console.log(data);
+        });
+    </script>
+</body>
+
+</html>
