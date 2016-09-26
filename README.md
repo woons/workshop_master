@@ -9,7 +9,7 @@ WORKSHOP | DATA VISUALIZATION
 
 아래 링크에서 보실 수 있습니다
 
-- 링크 (https://www.icloud.com/keynote-live/sc:0op6tSkAce1SzyqRmUxbzInMee61-Ob5k7GrEUydpE2w1Uc6kRuLncyqLWqf0GgygiK)
+- 키노트 링크 (https://www.icloud.com/keynote-live/sc:0op6tSkAce1SzyqRmUxbzInMee61-Ob5k7GrEUydpE2w1Uc6kRuLncyqLWqf0GgygiK)
 - 엑셀 함수 참고자료 (https://goo.gl/Ai1gZi)
 
 ##BOOKS
