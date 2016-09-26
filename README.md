@@ -10,6 +10,7 @@ WORKSHOP | DATA VISUALIZATION
 아래 링크에서 보실 수 있습니다
 
 - 링크 (https://www.slideshare.net/secret/uU2Ebxj6WgJwv)
+- 엑셀 함수 참고자료 (https://goo.gl/Ai1gZi)
 
 ##BOOKS
 
