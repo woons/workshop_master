@@ -25,11 +25,14 @@ d3.js를 활용한 데이터시각화  샘플코드가 첨부되어 있습니다
 
 ##OpenRefine 정규표현식 코드 & Google Spreadsheet Scraping
 
-- value.replace(/\(.+\)/, "") -> 괄호 안의 내용 모두 삭제(괄호 포함)
-- Edit cells -> Transform
-- OpenRefine Website (http://openrefine.org/)
 - =IMPORTHTML("https://en.wikipedia.org/wiki/World_population", "table", 14)
 - =IMPORTXML("http://www.nytimes.com", "//h2[@class='story-heading']")
+- 데이터 수집 실습1 : https://goo.gl/3oOvIx
+ - =IMPORTXML("http://score.sports.media.daum.net/record/baseball/kbo/brnk.daum", "//td[@class='txt_league']")
+- 데이터 수집 실습2 : https://goo.gl/3oOvIx
+ - =IMPORTXML(A2, "//td[@class='post_subject']")
+- 데이터 정제 실습2 : https://goo.gl/vvl5Dv
+ - \(.+\)
 
 ##Abotu Malofiej
 
