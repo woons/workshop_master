@@ -55,6 +55,7 @@ d3.js를 활용한 데이터시각화  샘플코드가 첨부되어 있습니다
 
 ##포트폴리오
 
+- 홍대앞 상권변화 분석 (http://ds203.com/7th/)
 - 서울시 실시간데이터 시각화 (http://goo.gl/oxLfk0)
 - 한국경제신문 - 한국언론진흥재단 데이터저널리즘 (http://migrant.hankyung.com/)
 - 제주관광협회 입출도 데이터시각화 (http://www.hijeju.or.kr/pub/data/pc/)
@@ -63,6 +64,7 @@ d3.js를 활용한 데이터시각화  샘플코드가 첨부되어 있습니다
 
 ##참고 자료 링크
 
+- The Next Era of Designers Will Use Data as Their Medium (https://goo.gl/ssdfxe)
 - The Shipmap (http://www.shipmap.org/)
 - Gapminder World (http://goo.gl/F9itG8)
 - Gay rights in the US, state by state (http://goo.gl/5kiK9q)
