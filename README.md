@@ -10,7 +10,7 @@ WORKSHOP | DATA VISUALIZATION
 아래 링크에서 보실 수 있습니다
 
 - 키노트 링크 (https://www.icloud.com/keynote-live/sc:00LyXoieorWehxioz42su2bIYk28OK1BtW2bjaXYd25TNACnnYlZ0uMNHXq0AWosq6Y)
-
+- 카운트 함수 (https://docs.google.com/spreadsheets/d/1Lx_zKK0VENQFlTH2mluaTrzvCjkhhSjOTJRVE5txRQ8/edit?usp=sharing)
 ##BOOKS
 
 Data visualization & Infographics Book list (http://library2016.azurewebsites.net/)
