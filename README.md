@@ -9,7 +9,7 @@ WORKSHOP | DATA VISUALIZATION
 
 아래 링크에서 보실 수 있습니다
 
-- 키노트 링크 (https://www.icloud.com/keynote-live/sc:0op6tSkAce1SzyqRmUxbzInMee61-Ob5k7GrEUydpE2w1Uc6kRuLncyqLWqf0GgygiK)
+- 키노트 링크 (https://www.icloud.com/keynote-live/sc:00LyXoieorWehxioz42su2bIYk28OK1BtW2bjaXYd25TNACnnYlZ0uMNHXq0AWosq6Y)
 
 ##BOOKS
 
