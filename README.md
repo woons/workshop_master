@@ -1,9 +1,9 @@
 WORKSHOP | DATA VISUALIZATION
 ===============
-
-한경대학교 2016 미디어디자인 강의개요 입니다.  
+ 
 강의슬라이드, 참조URL, 샘플코드, 샘플데이터 등을 포함하고 있습니다. 
 궁금한 것들이 있으면 아래 연락처로 메일 혹은 쪽지 주세요
+구글스프레드실습 : https://docs.google.com/spreadsheets/d/1tDj9aQqzjQgL-qg8PKg6QUigyUlqFqAh4AWdTyPR1Zk/edit?usp=sharing
 
 ##강의자료
 
