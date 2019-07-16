@@ -34,7 +34,7 @@ d3.js를 활용한 데이터시각화  샘플코드가 첨부되어 있습니다
 - 데이터 정제 실습2 : https://goo.gl/vvl5Dv
  - \(.+\)
 
-##Abotu Malofiej
+##About Malofiej
 
 - Malofiej (http://www.malofiejgraphics.com/)
 - Malofiej24 Online (http://goo.gl/MTnDl1)
